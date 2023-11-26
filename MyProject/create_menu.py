@@ -1,9 +1,8 @@
-from tkinter import *
+from tkinter import Menu
 
 from file_menu import *
 from change_menu import *
 class CreateMenu():
-    #Создание меню
 
     def __init__(self, window, text_widget, font_now):
         main_menu = Menu(window)

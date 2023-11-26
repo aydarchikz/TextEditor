@@ -1,7 +1,6 @@
-from tkinter import *
+from tkinter import Menu
 
 class FontMenu():
-    #Настройки шрифта
 
     def __init__(self, change_btn, text_widget, font_now):
         def change_font(font1, text_widget):

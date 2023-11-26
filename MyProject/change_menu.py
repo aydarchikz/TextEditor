@@ -3,7 +3,6 @@ from change_font import *
 from find_change_word import *
 
 class ChangeMenu():
-    #Раздел меню "изменить"
 
     def __init__(self, main_menu, window, text_widget, font_now):
         change_btn = Menu(main_menu, tearoff=0)
@@ -23,7 +22,6 @@ class ChangeMenu():
         button = FindChangeWordMenu(text_widget, is_change)
 
 class FontNow():
-    # Данные о текущем шрифте
 
     current_font = 'Consolas'
     current_size = 11

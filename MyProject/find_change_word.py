@@ -1,8 +1,14 @@
-from tkinter import *
+from tkinter import (
+  Entry,
+  Button,
+  LEFT,
+  RIGHT,
+  END,
+  Tk
+)
 import tkinter as tk
 
 class FindChangeWordMenu():
-    #Поиск и замена слов
 
     def __init__(self, text_widget, is_change):
         self.find_window = Tk()
@@ -19,7 +25,6 @@ class FindChangeWordMenu():
             btn.pack(side=RIGHT)
             btn.config(command=lambda: self.find_word(entry_find.get(), text_widget))
 
-    #Работа кнопки поиска
     def find_word(self, entry, text_widget):
         find_result = self.find(entry, text_widget)
         if find_result[0] != -1:
@@ -29,7 +34,6 @@ class FindChangeWordMenu():
             text_widget.mark_set(tk.INSERT, str(n_lines) + '.' + str(ind + len(entry)))
         self.find_window.destroy()
 
-    #Поиск слова
     def find(self, entry, text_widget):
         text = text_widget.get('1.0', END)
         lines = text.splitlines()
@@ -42,7 +46,6 @@ class FindChangeWordMenu():
                     return [n_lines, result]
         return [-1, -1]
 
-    #Работа кнопки замены слова
     def change_word(self, entry1, entry2, text_widget):
         text = text_widget.get('1.0', END)
         lines = text.splitlines()
@@ -53,7 +56,6 @@ class FindChangeWordMenu():
         text_widget.delete('end-1c', END)
         self.find_window.destroy()
 
-    #Замена слова
     def replace(self, line, string1, string2):
         ind = line.find(string1)
         while (ind != -1):

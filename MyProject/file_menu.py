@@ -1,8 +1,10 @@
-from tkinter import *
+from tkinter import (
+    Menu,
+    END,
+)
 from tkinter import filedialog
 
 class FileMenu():
-    #Раздел меню "файл"
 
     def __init__(self, main_menu, window, text_widget):
         file_btn = Menu(main_menu, tearoff=0)
